@@ -73,9 +73,9 @@ const resolvers = {
                 throw new AuthenticationError('You need to be logged in');
             }
 
-            // create a new review with the logged-in user
+            // create a new review with the logged in user
             const review = await Review.create({ ...args, user: context.user._id });
-            return review.populate('user');
+            return review.populate('user').execPopulate();
         },
         // delete review
         deleteReview: async (parent, { _id }, context) => {
