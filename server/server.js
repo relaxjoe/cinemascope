@@ -10,7 +10,7 @@ const { start } = require('repl');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // connect to the database
 db();
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 // JWT authentication
 const authenticate = (req, res, next) => {
   const token = req.headers.authorization || '';
-  if (token) {
+  if (token) {o
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       req.user = decoded;
