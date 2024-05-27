@@ -5,7 +5,6 @@ const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
-const { start } = require('repl');
 
 dotenv.config();
 
