@@ -33,6 +33,7 @@ const typeDefs = gql`
     movie(id: ID!): Movie
     users: [User]
     user(id: ID!): User
+    reviews(id: ID!): Review
   }
 
   input MovieInput {
@@ -54,6 +55,8 @@ const typeDefs = gql`
     deleteMovie(id: ID!): Movie
     registerUser(input: UserInput!): User
     loginUser(email: String!, password: String!): AuthPayload
+    createReview(id: ID!, user: UserInput!, rating: Int!, comment: String!): Review
+    deleteReview(id: ID!): Review
   }
 
   type AuthPayload {
