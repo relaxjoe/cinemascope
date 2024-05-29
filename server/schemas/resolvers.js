@@ -28,7 +28,7 @@ const resolvers = {
     },
     Mutation: {
         // register new user
-        register: async (parent, args) => {
+        registerUser: async (parent, args) => {
             const { email, password } = args;
             // check if user already exists
             const user = await User.findOne({ email });
@@ -47,7 +47,7 @@ const resolvers = {
             return { token, user: newUser };
         },
         // log in existing user
-        login: async (parent, { email, password }) => {
+        loginUser: async (parent, { email, password }) => {
             // find the user by email
             const user = await User.findOne({ email });
 

@@ -1,8 +1,8 @@
 const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
+const { ApolloServer } = require('@apollo/server');
 const path = require('path');
-const { typeDefs, resolvers } = require('./server/schemas');
-const db = require('./server/config/connection');
+const { typeDefs, resolvers } = require('./schemas');
+const db = require('./config/connection');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
 
@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // connect to the database
-db();
+// db();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
