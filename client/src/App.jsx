@@ -31,3 +31,23 @@ const App = () => {
 };
 
 export default App;
+
+
+// function App() {
+//     const [count, setCount] = useState(0)
+  
+//     return (
+//       <>
+//   <Navbar />
+//   <Banner />
+//   <About />
+//   <Video />
+//   <Card />
+//   <Contact />
+  
+//       </>
+//     )
+//   }
+  
+//   export default App
+  
