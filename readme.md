@@ -1,8 +1,8 @@
-## Cinema Scope
+## CinemaScope
 
 ## Overview
 
-Welcome to Cinema Scope, a new site for movie lovers to share and explore the film world. Here, you can make an account, write your own movie reviews, and chat with others by leaving comments. Cinema Scope is features tech like React for the interactive parts, GraphQL with Node.js and Express.js for the backend, and MongoDB with Mongoose to keep things organized. We also keep your info safe with JWT. Join us and start you career as a movie critic today.
+Welcome to CinemaScope, a new site for movie lovers to share and explore the film world. Here, you can make an account, write your own movie reviews, and chat with others by leaving comments. CinemaScope is features tech like React for the interactive parts, GraphQL with Node.js and Express.js for the backend, and MongoDB with Mongoose to keep things organized. We also keep your info safe with JWT. Join us and start you career as a movie critic today.
 
 ## Table of Contents
 
