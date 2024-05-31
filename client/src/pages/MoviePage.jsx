@@ -2,18 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
 
-const GET_MOVIE= gql`
-    query GetMovie($id: ID!) {
-        MOVIE(ID: $id) {
-            id
-            title
-            description
-            director
-            genre
-            releaseDate
-        }
-    }
-    `;
+import { GET_MOVIE } from '../utils/queries';
 
 const MoviePage = () => {
     // get movie id from url params
