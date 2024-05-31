@@ -2,36 +2,19 @@ const express = require('express');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
+const { authMiddleware } = require('./utils/auth');
+
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
-const dotenv = require('dotenv');
-const jwt = require('jsonwebtoken');
 
-dotenv.config();
-
-const app = express();
 const PORT = process.env.PORT || 3001;
+const app = express();
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
-// connect to the database
-// db();
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// JWT authentication
-const authenticate = (req, res, next) => {
-  const token = req.headers.authorization || '';
-  if (token) {o
-    try {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = decoded;
-    } catch (err) {
-      console.error('JWT verification failed', err);
-    }
-  }
-  next();
-};
-
+// Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
   await server.start();
 
@@ -39,7 +22,7 @@ const startApolloServer = async () => {
   app.use(express.json());
 
   app.use('/graphql', expressMiddleware(server, {
-    context: authenticate
+    context: authMiddleware
   }));
 
   if (process.env.NODE_ENV === 'production') {
@@ -58,17 +41,5 @@ const startApolloServer = async () => {
   });
 };
 
-app.use(authenticate);
-
-// creating apollo erver
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: ({ req }) => {
-    const user = req.user || null;
-    return { user };
-  }
-});
-
-// start server
+// Call the async function to start the server
 startApolloServer();

@@ -5,14 +5,14 @@ const typeDefs = gql`
   scalar DateTime
 
   type User {
-    id: ID!
-    name: String!
+    _id: ID
+    username: String!
     email: String!
     password: String!
   }
 
   type Movie {
-    id: ID!
+    _id: ID
     title: String!
     description: String!
     director: String!
@@ -22,7 +22,7 @@ const typeDefs = gql`
   }
 
   type Review {
-    id: ID!
+    _id: ID
     user: User!
     rating: Int!
     comment: String!
@@ -45,7 +45,7 @@ const typeDefs = gql`
   }
 
   input UserInput {
-    name: String!
+    username: String!
     email: String!
     password: String!
   }
