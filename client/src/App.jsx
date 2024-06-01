@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import HomePage from './pages/HomePage';
-import LoginForm from './componets/LoginForm';
-import SignupForm from './componets/SignupForm';
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
 import MoviePage from './pages/MoviePage';
-import AppNavbar from './componets/Navbar';
+import AppNavbar from './components/Navbar';
+import { Outlet } from 'react-router-dom';
 
 // intialize apollo client
 const client = new ApolloClient({
@@ -17,18 +18,14 @@ const client = new ApolloClient({
 const App = () => {
     return (
         <ApolloProvider client={client}>
-            {/* <AppNavbar /> */}
-            <Router>
-                <div>
-                    <Routes>
-                        <Route exact path="/" element={<HomePage />} />
-                        {/* <Route path="/login" component={LoginForm} />
-                        <Route path="/signup" component={SignupForm} />
-                        <Route path="/movie/:id" component={MoviePage} /> */}
-                    </Routes>
-                </div>
-            </Router>
-        </ApolloProvider>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <AppNavbar />
+          <div className="container">
+            <Outlet />
+          </div>
+        
+        </div>
+      </ApolloProvider>
     );
 };
 

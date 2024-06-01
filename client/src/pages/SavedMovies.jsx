@@ -7,9 +7,9 @@ import {
   Col
 } from 'react-bootstrap';
 
-import { getMe, deleteMovie } from '../utils/API';
+// import { getMe, deleteMovie } from '../utils/API';
 import Auth from '../utils/auth';
-import { removeMovieId } from '../utils/localStorage';
+// import { removeMovieId } from '../utils/localStorage';
 
 const SavedMovies = () => {
   const [userData, setUserData] = useState({});
