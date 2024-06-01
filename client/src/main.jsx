@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from './App.jsx';
 import Home from './pages/HomePage.jsx';
 import Signup from './pages/Signup';
-import Login from './pages/Login';
+import Login from './pages/Login.jsx';
 import MoviePage from './pages/MoviePage';
 import SavedMovies from './pages/SavedMovies';
 import Profile from './pages/Profile';

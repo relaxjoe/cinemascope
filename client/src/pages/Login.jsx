@@ -1,6 +1,6 @@
 import LoginForm from "../components/LoginForm";
 
-function LogIn() {
+function Login() {
   return (
     <div>
       <LoginForm />
@@ -8,4 +8,4 @@ function LogIn() {
   );
 }       
 
-export default LogIn;
+export default Login;
