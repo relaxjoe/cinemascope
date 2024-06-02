@@ -4,6 +4,7 @@ import { gql, useQuery } from '@apollo/client';
 
 import { GET_MOVIE } from '../utils/queries';
 import MovieCard from '../components/CardMovie';
+import MovieData from '../utils/moviecard.json';
 
 const MoviePage = () => {
     // get movie id from url params

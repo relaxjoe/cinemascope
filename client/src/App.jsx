@@ -2,11 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-import HomePage from './pages/HomePage';
-import LoginForm from './components/LoginForm';
-import SignupForm from './components/SignupForm';
-import MoviePage from './pages/MoviePage';
-import AppNavbar from './components/Navbar';
+// 
+import NavBar from './components/NavBar';
 import { Outlet } from 'react-router-dom';
 
 // intialize apollo client
@@ -19,7 +16,7 @@ const App = () => {
     return (
         <ApolloProvider client={client}>
         <div className="flex-column justify-flex-start min-100-vh">
-          <AppNavbar />
+          <NavBar />
           <div className="container">
             <Outlet />
           </div>
