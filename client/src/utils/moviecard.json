@@ -1,0 +1,93 @@
+[{
+"title": "xmen",
+"year": "2000",
+"image": "css/images/movie1.jpg",
+"rating": 5,
+"comments": 12
+},
+{
+    "title": "spider man 2",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+
+},
+{
+    "title": "spider man 3",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+
+},
+{
+    "title": "valkryie",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+
+},
+{
+    "title": "gladiator",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+
+},
+{
+    "title": "ice age",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+
+},
+{
+"title": "transformers",
+"year": "2000",
+"image": "css/images/movie1.jpg",
+"rating": 5,
+"comments": 12
+},
+{
+    "title": "magneto",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+
+},
+{
+    "title": "kung fu panda",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+
+},
+{
+    "title": "eagle eye",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+
+},
+{
+    "title": "Narnia 2",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+
+},
+{
+    "title": "Angels and Demons",
+    "year": "2000",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "comments": 12
+}]
