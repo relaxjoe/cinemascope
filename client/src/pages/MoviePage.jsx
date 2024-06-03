@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
 
 import { GET_MOVIE } from '../utils/queries';
-import MovieCard from '../components/CardMovie';
+import MovieCard from '../components/MovieCard';
 import MovieData from '../utils/moviecard.json';
 
 const MoviePage = () => {
@@ -32,7 +32,9 @@ const MoviePage = () => {
             <p class="text-right"><a href="#">See all</a></p>
           </div>
             <h1>{movie?.title}</h1>
-            <MovieCard movie={movie} />
+            {MovieData.map((movie) => (
+                <MovieCard key={movie.id} movie={movie} />
+            ))}
         </div>
       </div>
     </div>
