@@ -3,17 +3,17 @@ function NavBar () {
   <>
     <div id="header">
     <h1 id="logo"><a href="#">MovieHunter</a></h1>
-    <div class="social"> <span>FOLLOW US ON:</span>
+    <div className="social"> <span>FOLLOW US ON:</span>
       <ul>
-        <li><a class="twitter" href="#">twitter</a></li>
-        <li><a class="facebook" href="#">facebook</a></li>
-        <li><a class="vimeo" href="#">vimeo</a></li>
-        <li><a class="rss" href="#">rss</a></li>
+        <li><a className="twitter" href="#">twitter</a></li>
+        <li><a className="facebook" href="#">facebook</a></li>
+        <li><a className="vimeo" href="#">vimeo</a></li>
+        <li><a className="rss" href="#">rss</a></li>
       </ul>
     </div>
     <div id="navigation">
       <ul>
-        <li><a class="active" href="#">HOME</a></li>
+        <li><a className="active" href="#">HOME</a></li>
         <li><a href="#">NEWS</a></li>
         <li><a href="#">IN THEATERS</a></li>
         <li><a href="#">COMING SOON</a></li>
@@ -31,8 +31,8 @@ function NavBar () {
       <div id="search">
         <form action="#" method="get" accept-charset="utf-8">
           <label for="search-field">SEARCH</label>
-          <input type="text" name="search field" value="Enter search here" id="search-field" class="blink search-field"  />
-          <input type="submit" value="GO!" class="search-button" />
+          <input type="text" name="search field" value="Enter search here" id="search-field" className="blink search-field"  />
+          <input type="submit" value="GO!" className="search-button" />
         </form>
       </div>
     </div>
