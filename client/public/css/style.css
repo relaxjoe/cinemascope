@@ -417,7 +417,7 @@ h1#logo a {
 .signup-form-container .form-label,
 .login-form-container .form-label {
   display: block; /* Ensure labels are block-level elements */
-  margin-bottom: 0.5rem; /* Space between label and input */
+
   text-align: center; /* Center align text within form controls */
 }
 
@@ -449,7 +449,7 @@ h1#logo a {
 .login-password-feedback {
   display: flex;
   justify-content: center;
-  margin-top: 1rem; /* Space between button and input fields */
+  
 }
 .login-email-feedback,
 .signup-username-feedback,
