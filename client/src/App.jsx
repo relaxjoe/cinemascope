@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 // 
-import NavBar from './components/NavBar';
+import NavBar from './components/Navbar';
 import { Outlet } from 'react-router-dom';
 
 // intialize apollo client
