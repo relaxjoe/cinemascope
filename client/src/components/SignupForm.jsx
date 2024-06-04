@@ -62,6 +62,7 @@ const SignupForm = () => {
 
         <Form.Group className='mb-3'>
           <Form.Label htmlFor='username'>Username</Form.Label>
+          <div className='signup-username-input-form'>
           <Form.Control
             type='text'
             placeholder='Your username'
@@ -70,11 +71,16 @@ const SignupForm = () => {
             value={userFormData.username}
             required
           />
+          </div>
+          <div className='signup-username-feedback'>
           <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+
+          </div>
         </Form.Group>
 
         <Form.Group className='mb-3'>
           <Form.Label htmlFor='email'>Email</Form.Label>
+          <div className='signup-email-input-form'>
           <Form.Control
             type='email'
             placeholder='Your email address'
@@ -83,11 +89,17 @@ const SignupForm = () => {
             value={userFormData.email}
             required
           />
+
+          </div>
+          <div className='signup-email-feedback'>
           <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+
+          </div>
         </Form.Group>
 
         <Form.Group className='mb-3'>
           <Form.Label htmlFor='password'>Password</Form.Label>
+          <div className='signup-password-input-form'>
           <Form.Control
             type='password'
             placeholder='Your password'
@@ -96,14 +108,21 @@ const SignupForm = () => {
             value={userFormData.password}
             required
           />
+
+          </div>
+          <div className='signup-password-feedback'>
+
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+          </div>
         </Form.Group>
+        <div className='signup-button-container'>
         <Button
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
           Submit
         </Button>
+        </div>
       </Form>
     </div>
   );

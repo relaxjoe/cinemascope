@@ -56,6 +56,7 @@ const LoginForm = () => {
         </Alert>
         <Form.Group className='mb-3'>
           <Form.Label htmlFor='email'>Email</Form.Label>
+          <div className='login-email-input-form'>
           <Form.Control
             type='text'
             placeholder='Your email'
@@ -64,11 +65,16 @@ const LoginForm = () => {
             value={userFormData.email}
             required
           />
+          </div>
+          <div className='login-email-feedback'>
           <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+
+          </div>
         </Form.Group>
 
         <Form.Group className='mb-3'>
           <Form.Label htmlFor='password'>Password</Form.Label>
+          <div className='login-password-input-form'>
           <Form.Control
             type='password'
             placeholder='Your password'
@@ -77,14 +83,21 @@ const LoginForm = () => {
             value={userFormData.password}
             required
           />
+
+          </div>
+          <div className='login-password-feedback'>
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+
+          </div>
         </Form.Group>
+        <div className='login-button-container'>
         <Button
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
           Submit
         </Button>
+</div>
       </Form>
     </div>
   );
