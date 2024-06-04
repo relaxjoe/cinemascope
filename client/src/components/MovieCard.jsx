@@ -1,13 +1,13 @@
 function MovieCard({ movie }) {
   return (
-    <div class="movie">
-    <div class="movie-image"> <span class="play"><span class="name">{movie.title}</span></span> <a href="#"><img src={movie.image} alt="" /></a> </div>
-    <div class="rating">
+    <div className="movie">
+    <div className="movie-image"> <span className="play"><span className="name">{movie.title}</span></span> <a href="#"><img src={movie.image} alt="" /></a> </div>
+    <div className="rating">
       <p>RATING</p>
-      <div class="stars">
-        <div class="stars-in"> </div>
+      <div className="stars">
+        <div className="stars-in"> </div>
       </div>
-      <span class="comments">12</span> </div>
+      <span className="comments">12</span> </div>
   </div>
   );
 }
