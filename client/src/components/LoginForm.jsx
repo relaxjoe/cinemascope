@@ -66,10 +66,7 @@ const LoginForm = () => {
             required
           />
           </div>
-          <div className='login-email-feedback'>
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
-
-          </div>
+          
         </Form.Group>
 
         <Form.Group className='mb-3'>
@@ -85,10 +82,7 @@ const LoginForm = () => {
           />
 
           </div>
-          <div className='login-password-feedback'>
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
-
-          </div>
+          
         </Form.Group>
         <div className='login-button-container'>
         <Button
