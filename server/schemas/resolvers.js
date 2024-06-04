@@ -43,9 +43,9 @@ const resolvers = {
             }
 
             // check if the password matches the stored hashed password
-            const isMatch = await bcrypt.compare(password, user.password);
+            const correctPw = await user.isCorrectPassword(password);
 
-            if (!isMatch) {
+            if (!correctPw) {
                 throw new AuthenticationError('Invalid credentials');
             }
 
