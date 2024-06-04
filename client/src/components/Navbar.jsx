@@ -29,9 +29,9 @@ function NavBar () {
         <li><a href="#">MOST COMMENTED</a></li>
       </ul>
       <div id="search">
-        <form action="#" method="get" accept-charset="utf-8">
-          <label for="search-field">SEARCH</label>
-          <input type="text" name="search field" value="Enter search here" id="search-field" className="blink search-field"  />
+        <form action="#" method="get" acceptCharset="utf-8">
+          <label htmlFor="search-field">SEARCH</label>
+          <input type="text" name="search field" defaultValue="Enter search here" id="search-field" className="blink search-field"  />
           <input type="submit" value="GO!" className="search-button" />
         </form>
       </div>
