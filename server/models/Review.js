@@ -8,11 +8,25 @@ const reviewSchema = new mongoose.Schema({
     },
     rating: {
         type: Number,
+        min: 0,
+        max: 5,
         required: true,
     },
     comment: {
         type: String,
+        required: false,
+    },
+    title: {
+        type: String,
         required: true,
+    },
+    director: {
+        type: String,
+        required: false,
+    },
+    actors: {
+        type: String,
+        required: false,
     },
 });
 

@@ -9,39 +9,37 @@ const typeDefs = gql`
     username: String!
     email: String!
     password: String!
-  }
-
-  type Movie {
-    _id: ID
-    title: String!
-    description: String!
-    director: String!
-    genre: String!
-    releaseDate: DateTime!
-    reviews: [Review]
+    reviews: [Review]!
   }
 
   type Review {
     _id: ID
     user: User!
     rating: Int!
-    comment: String!
+    comment: String
+    title: String!
+    director: String
+    actors: String
+  }
+
+  type Auth {
+    token: ID!
+    user: User
   }
 
   type Query {
-    movies: [Movie]
-    movie(id: ID!): Movie
+    me: User
+    user(username: String!): User
     users: [User]
-    user(id: ID!): User
-    reviews(id: ID!): Review
+    reviews(username: String!): [Review]
   }
 
-  input MovieInput {
+  input ReviewInput {
+    rating: Int!
+    comment: String
     title: String!
-    description: String!
-    director: String!
-    genre: String!
-    releaseDate: DateTime!
+    director: String
+    actors: String
   }
 
   input UserInput {
@@ -51,16 +49,10 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addMovie(input: MovieInput!): Movie
-    deleteMovie(id: ID!): Movie
-    registerUser(input: UserInput!): User
-    loginUser(email: String!, password: String!): AuthPayload
-    createReview(id: ID!, user: UserInput!, rating: Int!, comment: String!): Review
-    deleteReview(id: ID!): Review
-  }
-
-  type AuthPayload {
-    token: String!
+    registerUser(username: String!, email: String!, password: String!): Auth
+    loginUser(email: String!, password: String!): Auth
+    createReview(input: ReviewInput!): Review
+    deleteReview(reviewId: ID!): Review
   }
 `;
 

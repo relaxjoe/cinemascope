@@ -1,29 +1,28 @@
-const { User, Review, Movie } = require('../models');
+const { User, Review } = require('../models');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
     Query: {
+        me: async (parent, args, context) => {
+            if (context.user) {
+                return User.findOne({ _id: context.user._id }).populate('reviews')
+            }
+            throw AuthenticationError;
+        },
         // get all users
         users: async () => {
-            return User.find({});
+            return User.find({}).populate('reviews');
         },
         // get a user by id
-        user: async (parent, { _id }) => {
-            return User.findById(_id);
-        },
-        // get all movies
-        movies: async () => {
-            return Movie.find({});
-        },
-        // get a movie by id
-        movie: async (parent, { _id }) => {
-            return Movie.findById(_id);
+        user: async (parent, { username }) => {
+            return User.findOne({ username }).populate('reviews');
         },
         // get all reviews for movie by id
-        reviews: async (parent, { movieId }) => {
-            return Review.find({ movie: movieId }).populate('user');
+        reviews: async (parent, { username }) => {
+        const params = username ? { username } : {};
+            return Review.find(params);
         },
     },
     Mutation: {
@@ -68,29 +67,35 @@ const resolvers = {
         },
         // create a new review
         createReview: async (parent, args, context) => {
-            // check if the user is logged in
-            if (!context.user) {
-                throw new AuthenticationError('You need to be logged in');
-            }
+            if (context.user) {
+                const review = await Review.create(args);
 
-            // create a new review with the logged in user
-            const review = await Review.create({ ...args, user: context.user._id });
-            return review.populate('user').execPopulate();
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { reviews: review._id } }
+                );
+
+                return review;
+            }
+            throw AuthenticationError;
+            ('You need to be logged in!');
         },
         // delete review
-        deleteReview: async (parent, { _id }, context) => {
-            // check if the user is logged in
-            if (!context.user) {
-                throw new AuthenticationError('You need to be logged in');
-            }
+        deleteReview: async (parent, { reviewId }, context) => {
+            if (context.user) {
+                const review = await Review.findOneAndDelete({
+                    _id: reviewId,
+                    thoughtAuthor: context.user.username,
+                });
 
-            // find and delete the review
-            const review = await Review.findOneAndDelete({ _id, user: context.user._id });
-            if (!review) {
-                throw new Error('Review not found');
-            }
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { reviews: review._id } }
+                );
 
-            return review;
+                return review;
+            }
+            throw AuthenticationError;
         },
     },
 };
