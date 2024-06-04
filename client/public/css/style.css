@@ -437,22 +437,12 @@ h1#logo a {
 .signup-button-container,
 .login-button-container,
 .signup-username-input-form,
-.signup-username-feedback,
 .signup-email-input-form,
-.signup-email-feedback,
 .signup-password-input-form,
-.signup-password-feedback,
-.login-signup-feedback,
 .login-email-input-form,
-.login-email-feedback,
-.login-password-input-form,
-.login-password-feedback {
+.login-password-input-form {
   display: flex;
   justify-content: center;
-  
+  margin-bottom: 1rem;
 }
-.login-email-feedback,
-.signup-username-feedback,
-.signup-email-feedback{
-	margin-bottom: 1rem;
-}
+
