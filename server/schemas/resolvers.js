@@ -1,6 +1,7 @@
 const { User, Review } = require('../models');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
@@ -27,23 +28,10 @@ const resolvers = {
     },
     Mutation: {
         // register new user
-        registerUser: async (parent, args) => {
-            const { email, password } = args;
-            // check if user already exists
-            const user = await User.findOne({ email });
-
-            if (user) {
-                throw new Error('User already exists');
-            }
-
-            // hash the user's password
-            const hashedPassword = await bcrypt.hash(password, 10);
-            // create a new user with the hashed password
-            const newUser = await User.create({ ...args, password: hashedPassword });
-
-            // generate a JWT for the user
-            const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-            return { token, user: newUser };
+        registerUser: async (parent, { username, email, password }) => {
+            const user = await User.create({ username, email, password });
+            const token = signToken(user);
+            return { token, user };
         },
         // log in existing user
         loginUser: async (parent, { email, password }) => {
@@ -62,7 +50,7 @@ const resolvers = {
             }
 
             // generate a JWT for the user
-            const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+            const token = signToken(user);
             return { token, user };
         },
         // create a new review
