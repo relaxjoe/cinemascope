@@ -2,18 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
 
-const GET_MOVIE= gql`
-    query GetMovie($id: ID!) {
-        MOVIE(ID: $id) {
-            id
-            title
-            description
-            director
-            genre
-            releaseDate
-        }
-    }
-    `;
+import { GET_MOVIE } from '../utils/queries';
+import MovieCard from '../components/MovieCard';
+import MovieData from '../utils/moviecard.json';
 
 const MoviePage = () => {
     // get movie id from url params
@@ -29,22 +20,23 @@ const MoviePage = () => {
         }
     }, [data]);
 
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>Error 404: {error.message}</p>;
+    // if (loading) return <p>Loading...</p>
+    // if (error) return <p>Error 404: {error.message}</p>;
 
     return (
-        <div>
-      {movie ? (
-        <div>
-          <h1>{movie.title}</h1>
-          <p>{movie.description}</p>
-          <p><strong>Director:</strong> {movie.director}</p>
-          <p><strong>Genre:</strong> {movie.genre}</p>
-          <p><strong>Release Date:</strong> {new Date(movie.releaseDate).toDateString()}</p>
+      <div id="main">
+      <div id="content">
+        <div class="box">
+          <div class="head">
+            <h2>LATEST TRAILERS</h2>
+            <p class="text-right"><a href="#">See all</a></p>
+          </div>
+            <h1>{movie?.title}</h1>
+            {MovieData.map((movie) => (
+                <MovieCard key={movie.id} movie={movie} />
+            ))}
         </div>
-      ) : (
-        <p>Moive ID not found.</p>
-      )}
+      </div>
     </div>
   );
 };

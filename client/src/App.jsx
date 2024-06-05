@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-import HomePage from './pages/HomePage';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import MoviePage from './pages/MoviePage';
+// 
+import NavBar from './components/Navbar';
+import { Outlet } from 'react-router-dom';
 
 // intialize apollo client
 const client = new ApolloClient({
@@ -16,18 +15,35 @@ const client = new ApolloClient({
 const App = () => {
     return (
         <ApolloProvider client={client}>
-            <Router>
-                <div>
-                    <Switch>
-                        <Route exact path="/" component={HomePage} />
-                        <Route path="/login" component={Login} />
-                        <Route path="/signup" component={Signup} />
-                        <Route path="/movie/:id" component={MoviePage} />
-                    </Switch>
-                </div>
-            </Router>
-        </ApolloProvider>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <NavBar />
+          <div className="container">
+            <Outlet />
+          </div>
+        
+        </div>
+      </ApolloProvider>
     );
 };
 
 export default App;
+
+
+// function App() {
+//     const [count, setCount] = useState(0)
+  
+//     return (
+//       <>
+//   <Navbar />
+//   <Banner />
+//   <About />
+//   <Video />
+//   <Card />
+//   <Contact />
+  
+//       </>
+//     )
+//   }
+  
+//   export default App
+  
