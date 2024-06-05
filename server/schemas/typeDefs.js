@@ -9,7 +9,7 @@ const typeDefs = gql`
     username: String!
     email: String!
     password: String!
-    reviews: [Review]!
+    reviews: [Review]
   }
 
   type Review {
@@ -31,7 +31,7 @@ const typeDefs = gql`
     me: User
     user(username: String!): User
     users: [User]
-    reviews(username: String!): [Review]
+    reviews(username: String): [Review]
   }
 
   input ReviewInput {

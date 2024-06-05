@@ -8,17 +8,17 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user._id }).populate('reviews')
+                return User.findOne({ _id: context.user._id });
             }
             throw AuthenticationError;
         },
         // get all users
         users: async () => {
-            return User.find({}).populate('reviews');
+            return User.find({});
         },
         // get a user by id
         user: async (parent, { username }) => {
-            return User.findOne({ username }).populate('reviews');
+            return User.findOne({ username });
         },
         // get all reviews for movie by id
         reviews: async (parent, { username }) => {

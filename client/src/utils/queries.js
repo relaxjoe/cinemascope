@@ -1,27 +1,47 @@
 import { gql } from "@apollo/client";
 
-export const GET_MOVIES = gql`
-query movies {
-    movies {
-        id
-        title
-        description
-        director
-        genre
-        releaseDate
+export const QUERY_ME = gql`
+    query me {
+        me {
+            _id
+            username
+            email
+            reviews {
+                _id
+                title
+                rating
+            }
+        }
     }
-}
 `;
 
-export const GET_MOVIE = gql`
-    query movie($id: ID!) {
-        MOVIE(ID: $id) {
-            id
+export const QUERY_USER = gql`
+    query user($username: String!) {
+        user(username: $username) {
+            _id
+            username
+            reviews {
+                title
+                rating
+                comment
+                director
+                actors
+            }
+        }
+    }
+`;
+
+export const QUERY_REVIEWS = gql`
+    query reviews($username: String) {
+        reviews(username: $username) {
             title
-            description
+            rating
+            comment
             director
-            genre
-            releaseDate
+            actors
+            user {
+                username
+            }
         }
     }
 `;
