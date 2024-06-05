@@ -31,7 +31,7 @@ export const QUERY_USER = gql`
     }
 `;
 
-export const QUERY_REVIEWS = gql`
+export const GET_MOVIE = gql`
     query reviews($username: String) {
         reviews(username: $username) {
             title
