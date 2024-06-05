@@ -1,3 +1,5 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 function NavBar () {
   return (
   <>
@@ -14,21 +16,13 @@ function NavBar () {
     </div>
     <div id="navigation">
       <ul>
-        <li><a className="active" href="#">HOME</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">IN THEATERS</a></li>
-        <li><a href="#">COMING SOON</a></li>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">ADVERTISE</a></li>
+      <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>HOME</NavLink></li>
+        <li><NavLink to="/signup" className={({ isActive }) => isActive ? 'active' : ''}>SIGNUP</NavLink></li>
+        <li><NavLink to="/login" className={({ isActive }) => isActive ? 'active' : ''}>LOGIN</NavLink></li>
       </ul>
     </div>
     <div id="sub-navigation">
-      <ul>
-        <li><a href="#">SHOW ALL</a></li>
-        <li><a href="#">LATEST TRAILERS</a></li>
-        <li><a href="#">TOP RATED</a></li>
-        <li><a href="#">MOST COMMENTED</a></li>
-      </ul>
+     
       <div id="search">
         <form action="#" method="get" acceptCharset="utf-8">
           <label htmlFor="search-field">SEARCH</label>
