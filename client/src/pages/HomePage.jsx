@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 
-import { GET_MOVIES } from '../utils/queries';
+// import { GET_MOVIES } from '../utils/queries';
 
 const HomePage = () => {
     // const { loading, error, data } = useQuery(GET_MOVIES);
