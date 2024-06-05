@@ -1,93 +1,93 @@
 [{
-"title": "xmen",
-"year": "2000",
+"title": "X-Men",
+"year": "2006",
 "image": "css/images/movie1.jpg",
 "rating": 5,
-"comments": 12
+"comments": "An excellent movie in the X-Men universe!"
 },
 {
-    "title": "spider man 2",
-    "year": "2000",
-    "image": "css/images/movie1.jpg",
+    "title": "Spider Man 2",
+    "year": "2004",
+    "image": "css/images/movie2.jpg",
     "rating": 5,
-    "comments": 12
+    "comments": "Probably the best Spider-Man movie ever made"
 
 },
 {
-    "title": "spider man 3",
-    "year": "2000",
-    "image": "css/images/movie1.jpg",
-    "rating": 5,
-    "comments": 12
+    "title": "Spider Man 3",
+    "year": "2007",
+    "image": "css/images/movie3.jpg",
+    "rating": 4.5,
+    "comments": "Not as good as the second one but still an iconic film"
 
 },
 {
-    "title": "valkryie",
-    "year": "2000",
-    "image": "css/images/movie1.jpg",
-    "rating": 5,
-    "comments": 12
+    "title": "Valkryie",
+    "year": "2008",
+    "image": "css/images/movie4.jpg",
+    "rating": 4,
+    "comments": "Quite the story, one of the more underrated Tom Cruise movies"
 
 },
 {
-    "title": "gladiator",
+    "title": "Gladiator",
     "year": "2000",
-    "image": "css/images/movie1.jpg",
+    "image": "css/images/movie5.jpg",
     "rating": 5,
-    "comments": 12
+    "comments": "My all-time favorite movie"
 
 },
 {
-    "title": "ice age",
-    "year": "2000",
-    "image": "css/images/movie1.jpg",
-    "rating": 5,
-    "comments": 12
+    "title": "Ice Age",
+    "year": "2002",
+    "image": "css/images/movie6.jpg",
+    "rating": 4,
+    "comments": "A super quotable movie about an unlikely trio. My kids love Scrat!"
 
 },
 {
-"title": "transformers",
-"year": "2000",
-"image": "css/images/movie1.jpg",
-"rating": 5,
-"comments": 12
+"title": "Transformers",
+"year": "2007",
+"image": "css/images/movie7.jpg",
+"rating": 4.5,
+"comments": "The best transformers movie, they should have stopped after this one. It has held up surprisingly well"
 },
 {
-    "title": "magneto",
-    "year": "2000",
-    "image": "css/images/movie1.jpg",
-    "rating": 5,
-    "comments": 12
+    "title": "Magneto",
+    "year": "2009",
+    "image": "css/images/movie8.jpg",
+    "rating": 1,
+    "comments": "This movie was canceled. This is my biggest what-if for the X-Men universe and I will never forgive Fox for not making it"
 
 },
 {
-    "title": "kung fu panda",
-    "year": "2000",
-    "image": "css/images/movie1.jpg",
-    "rating": 5,
-    "comments": 12
+    "title": "Kung Fu Panda",
+    "year": "2008",
+    "image": "css/images/movie9.jpg",
+    "rating": 3,
+    "comments": "This was highly recommended but I left disappointed."
 
 },
 {
-    "title": "eagle eye",
-    "year": "2000",
-    "image": "css/images/movie1.jpg",
-    "rating": 5,
-    "comments": 12
+    "title": "Eagle Eye",
+    "year": "2008",
+    "image": "css/images/movie10.jpg",
+    "rating": 4.5,
+    "comments": "One of my favorites, reminds me of Enemy of the State in the best way!"
 
 },
 {
     "title": "Narnia 2",
-    "year": "2000",
-    "image": "css/images/movie1.jpg",
-    "rating": 5,
-    "comments": 12
+    "year": "2008",
+    "image": "css/images/movie11.jpg",
+    "rating": 4,
+    "comments": "Pretty good. My kids liked it a lot more than I did"
 
 },
 {
     "title": "Angels and Demons",
-    "year": "2000",
-    "image": "css/images/movie1.jpg",
-    "rating": 5,
-    "comments": 12
+    "year": "2009",
+    "image": "css/images/movie12.jpg",
+    "rating": 3,
+    "comments": "The book was better."
 }]
