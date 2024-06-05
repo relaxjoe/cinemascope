@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <SavedMovies />
       }, {
         path: '/movie',
-        element: < MoviePage/>
+        element: <MoviePage />
       }
     ]
   },

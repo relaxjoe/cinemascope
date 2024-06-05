@@ -73,6 +73,7 @@ h4 {
 }
 #header {
 	position:relative;
+	
 }
 h1#logo {
 	position:absolute;
@@ -81,12 +82,13 @@ h1#logo {
 }
 h1#logo a {
 	float:left;
-	width:239px;
-	height:49px;
-	background:url('images/logo.gif') no-repeat 0 0;
+	width:130px;
+	height:130px;
+	background:url('/css/images/cinemascope.png') no-repeat 0 0;
 	font-size:0;
 	line-height:0;
 	text-indent:-4000px;
+	margin-left: 2rem;
 }
 .social {
 	float:right;
@@ -133,7 +135,7 @@ h1#logo a {
 	float:right;
 	clear:right;
 	padding-top:28px;
-	padding-bottom:47px;
+	padding-bottom:120px;
 }
 #navigation ul {
 	list-style:none;
@@ -155,9 +157,9 @@ h1#logo a {
 #sub-navigation {
 	display:block;
 	clear:right;
-	border-top:1px dashed #666;
-	border-bottom:1px dashed #666;
-	padding:8px 0;
+	border-top:1px dashed #e80909;
+	border-bottom:1px dashed #e80909;
+	padding:15px 0;
 }
 #sub-navigation ul {
 	list-style:none;
