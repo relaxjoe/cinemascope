@@ -24,3 +24,15 @@ export const CREATE_USER = gql`
   }
 `;
 
+export const CREATE_REVIEW = gql`
+  mutation createReview($rating: Int!, $comment: String, $title: String!, $director: String, $actors: String) {
+    createReview(input: { rating: $rating, commment: $comment, title: $title, director: $director, actors: $actors }) {
+      _id
+      rating
+      comment
+      title
+      director
+      actors
+    }
+  }
+`;
