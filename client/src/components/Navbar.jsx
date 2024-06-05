@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../utils/AuthContext';
+
 function NavBar () {
+  const { isLoggedIn, logout } = useContext(AuthContext);
   return (
   <>
     <div id="header">
@@ -15,11 +18,21 @@ function NavBar () {
       </ul>
     </div>
     <div id="navigation">
-      <ul>
-      <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>HOME</NavLink></li>
-        <li><NavLink to="/signup" className={({ isActive }) => isActive ? 'active' : ''}>SIGNUP</NavLink></li>
-        <li><NavLink to="/login" className={({ isActive }) => isActive ? 'active' : ''}>LOGIN</NavLink></li>
-      </ul>
+    <ul>
+            <li><NavLink to="/" activeclassname="active">HOME</NavLink></li>
+            {!isLoggedIn && (
+              <>
+                <li><NavLink to="/signup" activeclassname="active">SIGNUP</NavLink></li>
+                <li><NavLink to="/login" activeclassname="active">LOGIN</NavLink></li>
+              </>
+            )}
+            {isLoggedIn && (
+              <>
+                <li><NavLink to="/profile" activeclassname="active">PROFILE</NavLink></li>
+                <li><button onClick={logout} className="nav-button">LOGOUT</button></li>
+              </>
+            )}
+          </ul>
     </div>
     <div id="sub-navigation">
      

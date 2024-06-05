@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { gql, useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
+import { AuthContext } from '../utils/AuthContext';
 
 // Define the GraphQL mutation
 import { LOGIN_USER } from '../utils/mutations';
@@ -10,6 +11,7 @@ const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const { login } = useContext(AuthContext);
 
   // Use the useMutation hook to call the GraphQL mutation
   const [loginUser, { error }] = useMutation(LOGIN_USER);
@@ -37,6 +39,7 @@ const LoginForm = () => {
       const { token, user } = data.loginUser;
       console.log(user);
       Auth.login(token);
+      login();
     } catch (err) {
       console.error(err);
       setShowAlert(true);
