@@ -19,6 +19,7 @@ function NavBar () {
       <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>HOME</NavLink></li>
         <li><NavLink to="/signup" className={({ isActive }) => isActive ? 'active' : ''}>SIGNUP</NavLink></li>
         <li><NavLink to="/login" className={({ isActive }) => isActive ? 'active' : ''}>LOGIN</NavLink></li>
+        <li><NavLink to="/profile" className={({ isActive }) => isActive ? 'active' : ''}>PROFILE</NavLink></li>
       </ul>
     </div>
     <div id="sub-navigation">
