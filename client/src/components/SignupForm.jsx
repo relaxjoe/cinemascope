@@ -18,7 +18,7 @@ const SignupForm = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   // Use the useMutation hook to call the GraphQL mutation
-  const [createUser, { error }] = useMutation(CREATE_USER);
+  const [registerUser, { error, data }] = useMutation(CREATE_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -34,13 +34,13 @@ const SignupForm = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-
+    console.log(data)
     try {
-      const { data } = await createUser({
+      const { data } = await registerUser({
         variables: { ...userFormData },
       });
-
-      const { token, user } = data.createUser;
+      console.log(data)
+      const { token, user } = data.registerUser;
       console.log(user);
       Auth.login(token);
     } catch (err) {
