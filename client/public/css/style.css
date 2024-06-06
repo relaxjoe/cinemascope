@@ -140,6 +140,7 @@ h1#logo a {
   clear: right;
   padding-top: 28px;
   padding-bottom: 47px;
+  margin-right: 4rem;
 }
 #navigation ul {
   list-style: none;

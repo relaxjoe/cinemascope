@@ -1,4 +1,9 @@
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../utils/AuthContext';
+
 function NavBar () {
+  const { isLoggedIn, logout } = useContext(AuthContext);
   return (
   <>
     <div id="header">
@@ -13,22 +18,24 @@ function NavBar () {
       </ul>
     </div>
     <div id="navigation">
-      <ul>
-        <li><a className="active" href="#">HOME</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">IN THEATERS</a></li>
-        <li><a href="#">COMING SOON</a></li>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">ADVERTISE</a></li>
-      </ul>
+    <ul>
+            <li><NavLink to="/" activeclassname="active">HOME</NavLink></li>
+            {!isLoggedIn && (
+              <>
+                <li><NavLink to="/signup" activeclassname="active">SIGNUP</NavLink></li>
+                <li><NavLink to="/login" activeclassname="active">LOGIN</NavLink></li>
+              </>
+            )}
+            {isLoggedIn && (
+              <>
+                <li><NavLink to="/profile" activeclassname="active">PROFILE</NavLink></li>
+                <li><button onClick={logout} className="nav-button">LOGOUT</button></li>
+              </>
+            )}
+          </ul>
     </div>
     <div id="sub-navigation">
-      <ul>
-        <li><a href="#">SHOW ALL</a></li>
-        <li><a href="#">LATEST TRAILERS</a></li>
-        <li><a href="#">TOP RATED</a></li>
-        <li><a href="#">MOST COMMENTED</a></li>
-      </ul>
+     
       <div id="search">
         <form action="#" method="get" acceptCharset="utf-8">
           <label htmlFor="search-field">SEARCH</label>
