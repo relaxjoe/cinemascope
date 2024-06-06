@@ -9,6 +9,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import NavBar from './components/Navbar';
 import { Outlet } from 'react-router-dom';
 
+
+import { AuthProvider } from './utils/AuthContext';
+
+
 // intialize apollo client
 const client = new ApolloClient({
     uri: '/graphql',
@@ -19,6 +23,7 @@ const App = () => {
     return (
       
         <ApolloProvider client={client}>
+          <AuthProvider>
         <div className="flex-column justify-flex-start min-100-vh">
           <NavBar />
           <div className="container">
@@ -26,6 +31,8 @@ const App = () => {
           </div>
         
         </div>
+
+          </AuthProvider>
       </ApolloProvider>
     );
 };
