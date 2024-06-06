@@ -8,7 +8,6 @@ function NavBar () {
   <>
     <div id="header">
     <h1 id="logo"><a href="#">MovieHunter</a></h1>
-    
     <div className="social"> <span>FOLLOW US ON:</span>
       <ul>
         <li><a className="twitter" href="#">twitter</a></li>
@@ -35,7 +34,6 @@ function NavBar () {
           </ul>
     </div>
     <div id="sub-navigation">
-     
       <div id="search">
         <form action="#" method="get" acceptCharset="utf-8">
           <label htmlFor="search-field">SEARCH</label>
@@ -48,5 +46,4 @@ function NavBar () {
   </>
   )
 }
-
 export default NavBar;
