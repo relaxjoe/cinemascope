@@ -6,7 +6,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 
 // 
-import NavBar from './components/Navbar';
+import NavBar from './components/apple';
 import { Outlet } from 'react-router-dom';
 
 

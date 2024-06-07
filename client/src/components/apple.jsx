@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../utils/AuthContext';
-
-function NavBar () {
+export default function NavBar () {
   const { isLoggedIn, logout } = useContext(AuthContext);
   return (
-  <>
     <div id="header">
-    <h1 id="logo"><a href="#">MovieHunter</a></h1>
+   <h1 id="logo"><a href="#">MovieHunter</a></h1>
     <div className="social"> <span>FOLLOW US ON:</span>
       <ul>
         <li><a className="twitter" href="#">twitter</a></li>
@@ -15,7 +13,7 @@ function NavBar () {
         <li><a className="vimeo" href="#">vimeo</a></li>
         <li><a className="rss" href="#">rss</a></li>
       </ul>
-    </div>
+    </div> 
     <div id="navigation">
     <ul>
             <li><NavLink to="/" activeclassname="active">HOME</NavLink></li>
@@ -32,7 +30,7 @@ function NavBar () {
               </>
             )}
           </ul>
-    </div>
+    </div> 
     <div id="sub-navigation">
       <div id="search">
         <form action="#" method="get" acceptCharset="utf-8">
@@ -41,9 +39,7 @@ function NavBar () {
           <input type="submit" value="GO!" className="search-button" />
         </form>
       </div>
+    </div> 
     </div>
-  </div>
-  </>
   )
 }
-export default NavBar;
