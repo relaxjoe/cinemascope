@@ -110,4 +110,4 @@ const ReviewForm = () => {
     );
 };
 
-export default LoginForm;
+export default ReviewForm;

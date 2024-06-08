@@ -43,7 +43,7 @@ function MovieCard({ movie }) {
       <h1 className='movieTitle'>{movie.title}</h1>
       <p>Year: {movie.year}</p>
       <div className="rating_container">Rating: <StarRating rating={movie.rating} /></div>
-      <p>Reviews: <p>{movie.reviews}</p></p>
+      <p>Reviews: {movie.reviews}</p>
       <ul>
         {reviews.map((review, index) => (
           <p key={index}>{review}</p>

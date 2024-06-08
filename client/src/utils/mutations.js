@@ -13,8 +13,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const CREATE_USER = gql`
-  mutation registerUser($username: String!, $email: String!, $password: String!) {
-    registerUser(username: $username, email: $email, password: $password) {
+  mutation registerUser($input: UserInput!) {
+    registerUser(input: $UserInput) {
       token
       user {
         _id
@@ -26,7 +26,7 @@ export const CREATE_USER = gql`
 
 export const CREATE_REVIEW = gql`
   mutation createReview($rating: Int!, $comment: String, $title: String!, $director: String, $actors: String) {
-    createReview(rating: $rating, commment: $comment, title: $title, director: $director, actors: $actors) {
+    createReview(rating: $rating, comment: $comment, title: $title, director: $director, actors: $actors) {
       _id
       rating
       comment
