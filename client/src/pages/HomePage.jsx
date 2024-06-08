@@ -9,7 +9,7 @@ const HomePage = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch('/moviecard.json')
+    fetch('./moviecard.json')
       .then((response) => response.json())
       .then((data) => setMovies(data))
       .catch((error) => console.error('Error fetching movies:', error));
