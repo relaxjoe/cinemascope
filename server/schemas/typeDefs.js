@@ -15,8 +15,8 @@ const typeDefs = gql`
   type Review {
     _id: ID
     user: User!
-    rating: Int!
-    comment: String
+    rating: String!
+    comment: String!
     title: String!
     director: String
     actors: String
@@ -35,8 +35,8 @@ const typeDefs = gql`
   }
 
   input ReviewInput {
-    rating: Int!
-    comment: String
+    rating: String!
+    comment: String!
     title: String!
     director: String
     actors: String

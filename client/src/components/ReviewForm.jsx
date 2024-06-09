@@ -1,113 +1,64 @@
-import React, { useState, useContext } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
-import { gql, useMutation } from '@apollo/client';
+import {useState} from 'react';
+import {useMutation, useQuery} from '@apollo/client';
+import {CREATE_REVIEW} from '../utils/mutations';
+import ReviewCard from './ReviewCard';
+import { QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
-import { AuthContext } from '../utils/AuthContext';
 
-import { CREATE_REVIEW } from '../utils/mutations';
+function ReviewForm() {
+    const [formState, setFormState] = useState({
+rating: "",
+comment: "",
+title: "",
+director: "",
+actors: "",
 
-const ReviewForm = () => {
-    const [reviewText, setReviewText] = useState('');
-
-    const [createReview, { error }] = useMutation(CREATE_REVIEW);
-
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setReviewText({ ...reviewText, [name]: value });
-    };
-
-    const handleFormSubmit = async (event) => {
+    }); 
+    console.log(Auth.getProfile());
+    const {data} = useQuery(QUERY_ME);
+    const reviews = data?.me.reviews || [];
+    const[createReview] = useMutation(CREATE_REVIEW);
+    async function handleSubmit(event) {
         event.preventDefault();
-
-        try {
-            const { data } = await createReview({
-                variables: { reviewText },
-            });
-
-            setReviewText('');
-        } catch (err) {
-            console.error(err);
-        }
-    };
-
+        console.log(formState);
+        await createReview({variables: {...formState}});
+        window.location.reload();
+    }
     return (
-        <div className='review-form-container'>
-            <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-                <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='title'>Title</Form.Label>
-                    <div className='review-title-input-form'>
-                        <Form.Control
-                        type='text'
-                        placeholder='Required'
-                        name='title'
-                        onChange={handleInputChange}
-                        value={reviewText.title}
-                        required
-                        />
-                    </div>
-                </Form.Group>
-
-                <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='director'>Director</Form.Label>
-                    <div className='review-director-input-form'>
-                        <Form.Control
-                        type='text'
-                        name='director'
-                        onChange={handleInputChange}
-                        value={reviewText.director}
-                        />
-                    </div>
-                </Form.Group>
-
-                <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='actors'>Actors</Form.Label>
-                    <div className='review-actors-input-form'>
-                        <Form.Control
-                        type='text'
-                        name='actors'
-                        onChange={handleInputChange}
-                        value={reviewText.actors}
-                        />
-                    </div>
-                </Form.Group>
-
-                <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='rating'>Rating</Form.Label>
-                    <div className='review-rating-input-form'>
-                        <Form.Control
-                        type='number'
-                        placeholder='0-5'
-                        name='rating'
-                        onChange={handleInputChange}
-                        value={reviewText.rating}
-                        required
-                        />
-                    </div>
-                </Form.Group>
-
-                <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='comment'>Review</Form.Label>
-                    <div className='review-comment-input-form'>
-                        <Form.Control
-                        type='text'
-                        placeholder='Say something about the movie'
-                        name='comment'
-                        onChange={handleInputChange}
-                        value={reviewText.comment}
-                        />
-                    </div>
-                </Form.Group>
-                <div className='review-button-container'>
-                    <Button
-                    disabled={!(reviewText.title && reviewText.rating)}
-                    type='submit'
-                    variant='success'>
-                    Submit
-                    </Button>
-                </div>
-            </Form>
+        <div>
+            <h1>Review Form</h1>
+<form onSubmit={handleSubmit}>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Title:</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name of Film" onChange={event=>setFormState({...formState,title:event.target.value})} value={formState.title}/>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Rating</label>
+    <select class="form-control" id="exampleFormControlSelect1" onChange={event=>setFormState({...formState,rating:event.target.value})} value={formState.rating}>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+  <label for="exampleFormControlInput1">Director</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" onChange={event=>setFormState({...formState,director:event.target.value})} value={formState.director}/>
+  </div>
+  <div class="form-group">
+  <label for="exampleFormControlInput1">Actors</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" onChange={event=>setFormState({...formState,actors:event.target.value})} value={formState.actors}/>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Your Review</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={event=>setFormState({...formState,comment:event.target.value})} value={formState.comment}></textarea>
+  </div>
+    <button type="submit" class="btn btn-primary">Post</button>
+</form>
+{reviews.map(review=><ReviewCard review={review}username = {Auth.getProfile().data.username}/>)}
         </div>
-    );
-};
+    )
+}
 
 export default ReviewForm;
