@@ -24,7 +24,7 @@ const HomePage = () => {
         <div>
 {/* <ReviewForm /> */}
 {!loading?users.map(user=>{
-  return user.reviews.map(review=><ReviewCard review={review}/>)  
+  return user.reviews.map(review=><ReviewCard review={review} username={user.username} />)  
 }):""}
         </div>
 

@@ -3,6 +3,7 @@ import {useMutation, useQuery} from '@apollo/client';
 import {CREATE_REVIEW} from '../utils/mutations';
 import ReviewCard from './ReviewCard';
 import { QUERY_ME } from '../utils/queries';
+import Auth from '../utils/auth';
 
 function ReviewForm() {
     const [formState, setFormState] = useState({
@@ -12,7 +13,8 @@ title: "",
 director: "",
 actors: "",
 
-    });
+    }); 
+    console.log(Auth.getProfile());
     const {data} = useQuery(QUERY_ME);
     const reviews = data?.me.reviews || [];
     const[createReview] = useMutation(CREATE_REVIEW);
@@ -54,7 +56,7 @@ actors: "",
   </div>
     <button type="submit" class="btn btn-primary">Post</button>
 </form>
-{reviews.map(review=><ReviewCard review={review}/>)}
+{reviews.map(review=><ReviewCard review={review}username = {Auth.getProfile().data.username}/>)}
         </div>
     )
 }
