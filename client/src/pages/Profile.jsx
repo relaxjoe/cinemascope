@@ -1,11 +1,12 @@
 // import ProfileForm from "../components/ProfileForm";
 import ReviewForm from '../components/ReviewForm';
+import ProfileForm from '../components/ProfileForm';
 
 function Profile() {
   return (
     <div>
-       {/* <ProfileForm /> */}
       <ReviewForm />
+       <ProfileForm />
     </div>
   );
 }       
