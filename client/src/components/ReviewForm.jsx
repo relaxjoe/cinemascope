@@ -25,7 +25,7 @@ actors: "",
         window.location.reload();
     }
     return (
-        <div>
+        <div className='review_form_group'>
             <h1>Review Form</h1>
 <form onSubmit={handleSubmit}>
   <div className="form-group">
@@ -51,12 +51,12 @@ actors: "",
   <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Name" onChange={event=>setFormState({...formState,actors:event.target.value})} value={formState.actors}/>
   </div>
   <div className="form-group">
-    <label htmlFor="exampleFormControlTextarea1">Your Review</label>
+    <label htmlFor="exampleFormControlTextarea1">Review</label>
     <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={event=>setFormState({...formState,comment:event.target.value})} value={formState.comment}></textarea>
   </div>
     <button type="submit" className="btn btn-primary">Post</button>
 </form>
-{reviews.map(review=><ReviewCard review={review}username = {Auth.getProfile().data.username}/>)}
+
         </div>
     )
 }
