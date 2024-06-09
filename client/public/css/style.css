@@ -121,22 +121,23 @@ h1#logo a {
 .social ul li a {
   float: left;
   display: inline;
-  width: 16px;
-  height: 16px;
-  background: url("images/social.gif") no-repeat 0 0;
+  width: 45px;
+  height: 45px;
+  background: url("images/githubwhite.jpeg") no-repeat 0 0;
+  background-size: 100%;
   font-size: 0;
   line-height: 0;
   text-indent: -4000px;
 }
-.social ul li a.facebook {
+/* .social ul li a.facebook {
   background-position: -18px 0;
 }
 .social ul li a.vimeo {
   background-position: -36px 0;
 }
-.social ul li a.rss {
+.social ul li a.github {
   background-position: -54px 0;
-}
+} */
 #navigation {
   float: right;
   clear: right;
