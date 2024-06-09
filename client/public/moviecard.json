@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "X-Men",
+    "year": "2006",
+    "image": "css/images/movie1.jpg",
+    "rating": 5,
+    "reviews": "An excellent movie in the X-Men universe!"
+  },
+  {
+    "id": 2,
+    "title": "Spider Man 2",
+    "year": "2004",
+    "image": "css/images/movie2.jpg",
+    "rating": 5,
+    "reviews": "Probably the best Spider-Man movie ever made"
+  },
+  {
+    "id": 3,
+    "title": "Spider Man 3",
+    "year": "2007",
+    "image": "css/images/movie3.jpg",
+    "rating": 4.5,
+    "reviews": "Not as good as the second one but still an iconic film"
+  },
+  {
+    "id": 4,
+    "title": "Valkryie",
+    "year": "2008",
+    "image": "css/images/movie4.jpg",
+    "rating": 4,
+    "reviews": "Quite the story, one of the more underrated Tom Cruise movies"
+  },
+  {
+    "id": 5,
+    "title": "Gladiator",
+    "year": "2000",
+    "image": "css/images/movie5.jpg",
+    "rating": 5,
+    "reviews": "My all-time favorite movie"
+  },
+  {
+    "id": 6,
+    "title": "Ice Age",
+    "year": "2002",
+    "image": "css/images/movie6.jpg",
+    "rating": 4,
+    "reviews": "A super quotable movie about an unlikely trio. My kids love Scrat!"
+  },
+  {
+    "id": 7,
+    "title": "Transformers",
+    "year": "2007",
+    "image": "css/images/movie7.jpg",
+    "rating": 4.5,
+    "reviews": "The best transformers movie, they should have stopped after this one. It has held up surprisingly well"
+  },
+  {
+    "id": 8,
+    "title": "Magneto",
+    "year": "2009",
+    "image": "css/images/movie8.jpg",
+    "rating": 1,
+    "reviews": "This movie was canceled. This is my biggest what-if for the X-Men universe and I will never forgive Fox for not making it"
+  },
+  {
+    "id": 9,
+    "title": "Kung Fu Panda",
+    "year": "2008",
+    "image": "css/images/movie9.jpg",
+    "rating": 3,
+    "reviews": "This was highly recommended but I left disappointed."
+  },
+  {
+    "id": 10,
+    "title": "Eagle Eye",
+    "year": "2008",
+    "image": "css/images/movie10.jpg",
+    "rating": 4.5,
+    "reviews": "One of my favorites, reminds me of Enemy of the State in the best way!"
+  },
+  {
+    "id": 11,
+    "title": "Narnia 2",
+    "year": "2008",
+    "image": "css/images/movie11.jpg",
+    "rating": 4,
+    "reviews": "Pretty good. My kids liked it a lot more than I did"
+  },
+  {
+    "id": 12,
+    "title": "Angels and Demons",
+    "year": "2009",
+    "image": "css/images/movie12.jpg",
+    "rating": 3,
+    "reviews": "The book was better."
+  }
+]

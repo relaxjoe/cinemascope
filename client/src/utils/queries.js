@@ -1,34 +1,37 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
-    query me {
-        me {
-            _id
-            username
-            email
-            reviews {
-                _id
-                title
-                rating
-            }
-        }
+query Me {
+  me {
+    _id
+    email
+    reviews {
+      _id
+      actors
+      comment
+      director
+      rating
+      title
     }
+  }
+}
 `;
 
-export const QUERY_USER = gql`
-    query user($username: String!) {
-        user(username: $username) {
-            _id
-            username
-            reviews {
-                title
-                rating
-                comment
-                director
-                actors
-            }
-        }
+export const QUERY_USERS = gql`
+query User {
+  users {
+    email
+    reviews {
+      _id
+      actors
+      comment
+      director
+      rating
+      title
     }
+    username
+  }
+}
 `;
 
 export const GET_MOVIE = gql`
