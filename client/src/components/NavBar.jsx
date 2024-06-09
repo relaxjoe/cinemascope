@@ -5,7 +5,7 @@ export default function NavBar () {
   const { isLoggedIn, logout } = useContext(AuthContext);
   return (
     <div id="header">
-   <h1 id="logo"><a href="#">MovieHunter</a></h1>
+   <h1 id="logo"><a href="#">Cinemascope</a></h1>
     <div className="social"> <span>FOLLOW US ON:</span>
       <ul>
         <li><a className="twitter" href="#">twitter</a></li>
