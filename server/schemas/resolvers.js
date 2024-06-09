@@ -8,13 +8,16 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user._id });
+                console.log(context.user);
+                const user=await User.findOne({ _id: context.user._id }).populate('reviews');
+            console.log(user);
+            return user;
             }
             throw AuthenticationError;
         },
         // get all users
         users: async () => {
-            return User.find({});
+            return User.find({}).populate('reviews');
         },
         // get a user by id
         user: async (parent, { username }) => {
@@ -56,7 +59,7 @@ const resolvers = {
         // create a new review
         createReview: async (parent, args, context) => {
             if (context.user) {
-                const review = await Review.create(args);
+                const review = await Review.create({...args.input,user: context.user._id});
 
                 await User.findOneAndUpdate(
                     { _id: context.user._id },

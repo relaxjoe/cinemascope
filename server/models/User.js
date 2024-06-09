@@ -15,6 +15,12 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: true,
      },
+    reviews: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Review',
+        },
+    ],
 });
 
 userSchema.pre('save', async function (next) {

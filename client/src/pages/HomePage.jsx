@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import { QUERY_USERS } from '../utils/queries';
+import ReviewCard from '../components/ReviewCard';
 
 // import { GET_MOVIES } from '../utils/queries';
 
 const HomePage = () => {
+    const { loading, error, data } = useQuery(QUERY_USERS);
+    const reviews = data?.users.reviews || [];
+    console.log(reviews);
     // const { loading, error, data } = useQuery(GET_MOVIES);
     // const [moives, setMovies] = useState([]);
 
@@ -17,7 +22,11 @@ const HomePage = () => {
     // if (error) return <p>Error: {error.message}</p>;
 
     return (
-        <div>Hello</div>
+        <div>
+{/* <ReviewForm /> */}
+{!loading?reviews.map(review=><ReviewCard review={review}/>):""}
+        </div>
+
         // <div>
         //     <h1>Movies</h1>
         //     <ul>
