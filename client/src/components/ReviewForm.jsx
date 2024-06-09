@@ -28,13 +28,13 @@ actors: "",
         <div>
             <h1>Review Form</h1>
 <form onSubmit={handleSubmit}>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Title:</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name of Film" onChange={event=>setFormState({...formState,title:event.target.value})} value={formState.title}/>
+  <div className="form-group">
+    <label htmlFor="exampleFormControlInput1">Title:</label>
+    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Name of Film" onChange={event=>setFormState({...formState,title:event.target.value})} value={formState.title}/>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Rating</label>
-    <select class="form-control" id="exampleFormControlSelect1" onChange={event=>setFormState({...formState,rating:event.target.value})} value={formState.rating}>
+  <div className="form-group">
+    <label htmlFor="exampleFormControlSelect1">Rating</label>
+    <select className="form-control" id="exampleFormControlSelect1" onChange={event=>setFormState({...formState,rating:event.target.value})} value={formState.rating}>
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -42,19 +42,19 @@ actors: "",
       <option>5</option>
     </select>
   </div>
-  <div class="form-group">
-  <label for="exampleFormControlInput1">Director</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" onChange={event=>setFormState({...formState,director:event.target.value})} value={formState.director}/>
+  <div className="form-group">
+  <label htmlFor="exampleFormControlInput1">Director</label>
+  <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Name" onChange={event=>setFormState({...formState,director:event.target.value})} value={formState.director}/>
   </div>
-  <div class="form-group">
-  <label for="exampleFormControlInput1">Actors</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" onChange={event=>setFormState({...formState,actors:event.target.value})} value={formState.actors}/>
+  <div className="form-group">
+  <label htmlFor="exampleFormControlInput1">Actors</label>
+  <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Name" onChange={event=>setFormState({...formState,actors:event.target.value})} value={formState.actors}/>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Your Review</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={event=>setFormState({...formState,comment:event.target.value})} value={formState.comment}></textarea>
+  <div className="form-group">
+    <label htmlFor="exampleFormControlTextarea1">Your Review</label>
+    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={event=>setFormState({...formState,comment:event.target.value})} value={formState.comment}></textarea>
   </div>
-    <button type="submit" class="btn btn-primary">Post</button>
+    <button type="submit" className="btn btn-primary">Post</button>
 </form>
 {reviews.map(review=><ReviewCard review={review}username = {Auth.getProfile().data.username}/>)}
         </div>
