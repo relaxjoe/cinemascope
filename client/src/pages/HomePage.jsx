@@ -64,7 +64,7 @@ const HomePage = () => {
         {users.length > 0 ? (
           users.map((user) => (
             <li key={user._id}>
-              <h2>{user.username}'s Reviews</h2>
+              
               <ul>
                 {user.reviews && user.reviews.length > 0 ? (
                   user.reviews.map((review, index) => (
