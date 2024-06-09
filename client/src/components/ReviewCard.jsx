@@ -1,14 +1,16 @@
+import StarRating from "./StarRating";
+
 function ReviewCard({review, username}) {
     
   return (
-    <div class="card" style={{width: "18rem;"}}>
-      <div class="card-body">
-        <h5 class="card-title">Title: {review.title}</h5>
-        <p class="card-text">My Thoughts: {review.comment}</p>
-        <p class="card-text">Rating: {review.rating}</p>
-        <p class="card-text">Director: {review.director}</p>
-        <p class="card-text">Actor: {review.actors}</p>
-        <p class="card-text">User: {username}</p>
+    <div className="review_card" style={{width: "18rem"}}>
+      <div className="card-body">
+        <h1 className="review_card_title">{review.title}</h1>
+        <p className="card-text">My Thoughts: {review.comment}</p>
+        <div className="card-text">Rating:  <StarRating rating={review.rating} /></div>
+        <p className="card-text">Director: {review.director}</p>
+        <p className="card-text">Actor: {review.actors}</p>
+        <p className="card-text">User: {username}</p>
       </div>
     </div>
   );

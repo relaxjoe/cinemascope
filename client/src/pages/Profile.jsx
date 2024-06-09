@@ -4,7 +4,7 @@ import ProfileForm from '../components/ProfileForm';
 
 function Profile() {
   return (
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
       <ReviewForm />
        <ProfileForm />
     </div>

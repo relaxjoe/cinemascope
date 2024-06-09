@@ -23,9 +23,9 @@ const Profile = () => {
 
   return (
     <div>
-      <h1>My Profile</h1>
-      <h2>Reviews</h2>
-      <div>
+      <h1>My Reviews</h1>
+      
+      <div >
         {user.reviews && user.reviews.length > 0 ? (
           user.reviews.map((review) => (
             <ReviewCard key={review._id} review={review} username={user.username} />

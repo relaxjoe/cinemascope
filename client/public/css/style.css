@@ -452,7 +452,8 @@ h1#logo a {
   margin-bottom: 1rem;
 }
 
-.movie_card {
+.movie_card,
+.review_card {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
@@ -462,11 +463,25 @@ h1#logo a {
   display: inline-block;
 }
 
-.movieTitle {
+.movieTitle,
+.review_card_title {
   text-align: center;
 }
-/* .rating_container {
+
+.review_form_group {
   display: flex;
-  align-items: right;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  margin-bottom: 20px; /* Add some spacing between form groups */
+}
+
+.review_form_group label {
+  margin-bottom: 5px; /* Add spacing between label and input */
+}
+
+.review_form_group input,
+.review_form_group textarea {
+  width: 100%;
+  padding: 8px; /* Adjust padding as needed */
+  margin-bottom: 10px; /* Add spacing between inputs */
 }
