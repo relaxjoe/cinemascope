@@ -48,3 +48,20 @@ export const GET_MOVIE = gql`
         }
     }
 `;
+
+export const GET_USERS_WITH_REVIEWS = gql`
+  query getUsersWithReviews {
+    users {
+      _id
+      username
+      reviews {
+        _id
+        rating
+        comment
+        title
+        director
+        actors
+      }
+    }
+  }
+`;
