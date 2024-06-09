@@ -6,12 +6,12 @@ export default function NavBar () {
   return (
     <div id="header">
    <h1 id="logo"><a href="#">Cinemascope</a></h1>
-    <div className="social"> <span>FOLLOW US ON:</span>
+    <div className="social"> <span></span>
       <ul>
-        <li><a className="twitter" href="#">twitter</a></li>
-        <li><a className="facebook" href="#">facebook</a></li>
+        <li><a className="twitter" href="https://github.com/relaxjoe/cinemascope">github</a></li>
+        {/* <li><a className="facebook" href="#">facebook</a></li>
         <li><a className="vimeo" href="#">vimeo</a></li>
-        <li><a className="rss" href="#">rss</a></li>
+        <li><a className="github" href="#">github</a></li> */}
       </ul>
     </div> 
     <div id="navigation">
