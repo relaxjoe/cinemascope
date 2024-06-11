@@ -22,8 +22,8 @@ const Profile = () => {
   const user = data?.me || {};
 
   return (
-    <div>
-      <h1>My Reviews</h1>
+    <div className='my_reviews_container'>
+      <h1 className='my_reviews_title'>My Reviews</h1>
       
       <div >
         {user.reviews && user.reviews.length > 0 ? (
